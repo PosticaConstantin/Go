@@ -234,7 +234,7 @@ Read our [Contribution Guidelines](CONTRIBUTING.md) before you contribute.
 7. [`EditDistanceRecursive`](./dynamic/editdistance.go#L10):  EditDistanceRecursive is a naive implementation with exponential time complexity.
 8. [`IsSubsetSum`](./dynamic/subsetsum.go#L14): No description provided.
 9. [`Knapsack`](./dynamic/knapsack.go#L17):  Knapsack solves knapsack problem return maxProfit
-10. [`LongestCommonSubsequence`](./dynamic/longestcommonsubsequence.go#L12):  LongestCommonSubsequence function
+10. [`LongestCommonSubsequence`](./dynamic/longestcommonsubsequence.go#L13):  LongestCommonSubsequence function
 11. [`LongestIncreasingSubsequence`](./dynamic/longestincreasingsubsequence.go#L9):  LongestIncreasingSubsequence returns the longest increasing subsequence where all elements of the subsequence are sorted in increasing order
 12. [`LongestIncreasingSubsequenceGreedy`](./dynamic/longestincreasingsubsequencegreedy.go#L9):  LongestIncreasingSubsequenceGreedy is a function to find the longest increasing subsequence in a given array using a greedy approach. The dynamic programming approach is implemented alongside this one. Worst Case Time Complexity: O(nlogn) Auxiliary Space: O(n), where n is the length of the array(slice). Reference: https://www.geeksforgeeks.org/construction-of-longest-monotonically-increasing-subsequence-n-log-n/
 13. [`LpsDp`](./dynamic/longestpalindromicsubsequence.go#L25):  LpsDp function
@@ -342,25 +342,28 @@ Read our [Contribution Guidelines](CONTRIBUTING.md) before you contribute.
 
 ---
 
-#####  Package geometry contains geometric algorithms
+#####  Package geometry contains geometric algorithms Package geometry contains geometric algorithms
 
 ---
 ##### Functions:
 
 1. [`Distance`](./math/geometry/straightlines.go#L18):  Distance calculates the shortest distance between two points.
-2. [`IsParallel`](./math/geometry/straightlines.go#L42):  IsParallel checks if two lines are parallel or not.
-3. [`IsPerpendicular`](./math/geometry/straightlines.go#L47):  IsPerpendicular checks if two lines are perpendicular or not.
-4. [`PointDistance`](./math/geometry/straightlines.go#L53):  PointDistance calculates the distance of a given Point from a given line. The slice should contain the coefficiet of x, the coefficient of y and the constant in the respective order.
-5. [`Section`](./math/geometry/straightlines.go#L24):  Section calculates the Point that divides a line in specific ratio. DO NOT specify the ratio in the form m:n, specify it as r, where r = m / n.
-6. [`Slope`](./math/geometry/straightlines.go#L32):  Slope calculates the slope (gradient) of a line.
-7. [`YIntercept`](./math/geometry/straightlines.go#L37):  YIntercept calculates the Y-Intercept of a line from a specific Point.
+2. [`EuclideanDistance`](./math/geometry/distance.go#L20):  EuclideanDistance returns the Euclidean distance between points in any `n` dimensional Euclidean space.
+3. [`IsParallel`](./math/geometry/straightlines.go#L42):  IsParallel checks if two lines are parallel or not.
+4. [`IsPerpendicular`](./math/geometry/straightlines.go#L47):  IsPerpendicular checks if two lines are perpendicular or not.
+5. [`PointDistance`](./math/geometry/straightlines.go#L53):  PointDistance calculates the distance of a given Point from a given line. The slice should contain the coefficiet of x, the coefficient of y and the constant in the respective order.
+6. [`Section`](./math/geometry/straightlines.go#L24):  Section calculates the Point that divides a line in specific ratio. DO NOT specify the ratio in the form m:n, specify it as r, where r = m / n.
+7. [`Slope`](./math/geometry/straightlines.go#L32):  Slope calculates the slope (gradient) of a line.
+8. [`YIntercept`](./math/geometry/straightlines.go#L37):  YIntercept calculates the Y-Intercept of a line from a specific Point.
 
 ---
 ##### Types
 
-1. [`Line`](./math/geometry/straightlines.go#L13): No description provided.
+1. [`EuclideanPoint`](./math/geometry/distance.go#L14): No description provided.
 
-2. [`Point`](./math/geometry/straightlines.go#L9): No description provided.
+2. [`Line`](./math/geometry/straightlines.go#L13): No description provided.
+
+3. [`Point`](./math/geometry/straightlines.go#L9): No description provided.
 
 
 ---
@@ -516,23 +519,24 @@ Read our [Contribution Guidelines](CONTRIBUTING.md) before you contribute.
 ##### Functions:
 
 1. [`Abs`](./math/abs.go#L11):  Abs returns absolute value
-2. [`Combinations`](./math/binomialcoefficient.go#L20):  C is Binomial Coefficient function This function returns C(n, k) for given n and k
-3. [`Cos`](./math/cos.go#L10):  Cos  returns the cosine of the radian argument x. [See more](https://en.wikipedia.org/wiki/Sine_and_cosine) [Based on the idea of Bhaskara approximation of cos(x)](https://math.stackexchange.com/questions/3886552/bhaskara-approximation-of-cosx)
-4. [`DefaultPolynomial`](./math/pollard.go#L16):  DefaultPolynomial is the commonly used polynomial g(x) = (x^2 + 1) mod n
-5. [`FindKthMax`](./math/kthnumber.go#L11):  FindKthMax returns the kth large element given an integer slice with nil `error` if found and returns -1 with `error` `search.ErrNotFound` if not found. NOTE: The `nums` slice gets mutated in the process.
-6. [`FindKthMin`](./math/kthnumber.go#L19):  FindKthMin returns kth small element given an integer slice with nil `error` if found and returns -1 with `error` `search.ErrNotFound` if not found. NOTE: The `nums` slice gets mutated in the process.
-7. [`IsPerfectNumber`](./math/perfectnumber.go#L34):  Checks if inNumber is a perfect number
-8. [`IsPowOfTwoUseLog`](./math/checkisnumberpoweroftwo.go#L10):  IsPowOfTwoUseLog This function checks if a number is a power of two using the logarithm. The limiting degree can be from 0 to 63. See alternatives in the binary package.
-9. [`Lerp`](./math/lerp.go#L5):  Lerp or Linear interpolation This function will return new value in 't' percentage  between 'v0' and 'v1'
-10. [`LiouvilleLambda`](./math/liouville.go#L24):  Lambda is the liouville function This function returns λ(n) for given number
-11. [`Mean`](./math/mean.go#L7): No description provided.
-12. [`Median`](./math/median.go#L12): No description provided.
-13. [`Mode`](./math/mode.go#L19): No description provided.
-14. [`Mu`](./math/mobius.go#L21):  Mu is the Mobius function This function returns μ(n) for given number
-15. [`Phi`](./math/eulertotient.go#L5):  Phi is the Euler totient function. This function computes the number of numbers less then n that are coprime with n.
-16. [`PollardsRhoFactorization`](./math/pollard.go#L29):  PollardsRhoFactorization is an implementation of Pollard's rho factorization algorithm using the default parameters x = y = 2
-17. [`Sin`](./math/sin.go#L9):  Sin returns the sine of the radian argument x. [See more](https://en.wikipedia.org/wiki/Sine_and_cosine)
-18. [`SumOfProperDivisors`](./math/perfectnumber.go#L17):  Returns the sum of proper divisors of inNumber.
+2. [`AliquotSum`](./math/aliquotsum.go#L14):  This function returns s(n) for given number
+3. [`Combinations`](./math/binomialcoefficient.go#L20):  C is Binomial Coefficient function This function returns C(n, k) for given n and k
+4. [`Cos`](./math/cos.go#L10):  Cos  returns the cosine of the radian argument x. [See more](https://en.wikipedia.org/wiki/Sine_and_cosine) [Based on the idea of Bhaskara approximation of cos(x)](https://math.stackexchange.com/questions/3886552/bhaskara-approximation-of-cosx)
+5. [`DefaultPolynomial`](./math/pollard.go#L16):  DefaultPolynomial is the commonly used polynomial g(x) = (x^2 + 1) mod n
+6. [`FindKthMax`](./math/kthnumber.go#L11):  FindKthMax returns the kth large element given an integer slice with nil `error` if found and returns -1 with `error` `search.ErrNotFound` if not found. NOTE: The `nums` slice gets mutated in the process.
+7. [`FindKthMin`](./math/kthnumber.go#L19):  FindKthMin returns kth small element given an integer slice with nil `error` if found and returns -1 with `error` `search.ErrNotFound` if not found. NOTE: The `nums` slice gets mutated in the process.
+8. [`IsPerfectNumber`](./math/perfectnumber.go#L34):  Checks if inNumber is a perfect number
+9. [`IsPowOfTwoUseLog`](./math/checkisnumberpoweroftwo.go#L10):  IsPowOfTwoUseLog This function checks if a number is a power of two using the logarithm. The limiting degree can be from 0 to 63. See alternatives in the binary package.
+10. [`Lerp`](./math/lerp.go#L5):  Lerp or Linear interpolation This function will return new value in 't' percentage  between 'v0' and 'v1'
+11. [`LiouvilleLambda`](./math/liouville.go#L24):  Lambda is the liouville function This function returns λ(n) for given number
+12. [`Mean`](./math/mean.go#L7): No description provided.
+13. [`Median`](./math/median.go#L12): No description provided.
+14. [`Mode`](./math/mode.go#L19): No description provided.
+15. [`Mu`](./math/mobius.go#L21):  Mu is the Mobius function This function returns μ(n) for given number
+16. [`Phi`](./math/eulertotient.go#L5):  Phi is the Euler totient function. This function computes the number of numbers less then n that are coprime with n.
+17. [`PollardsRhoFactorization`](./math/pollard.go#L29):  PollardsRhoFactorization is an implementation of Pollard's rho factorization algorithm using the default parameters x = y = 2
+18. [`Sin`](./math/sin.go#L9):  Sin returns the sine of the radian argument x. [See more](https://en.wikipedia.org/wiki/Sine_and_cosine)
+19. [`SumOfProperDivisors`](./math/perfectnumber.go#L17):  Returns the sum of proper divisors of inNumber.
 
 ---
 </details><details>
@@ -780,6 +784,19 @@ Read our [Contribution Guidelines](CONTRIBUTING.md) before you contribute.
 
 ---
 </details><details>
+	<summary> <strong> rot13 </strong> </summary>	
+
+---
+
+#####  Package rot13 is a simple letter substitution cipher that replaces a letter with the 13th letter after it in the alphabet. ref: https://en.wikipedia.org/wiki/ROT13
+
+---
+##### Functions:
+
+1. [`FuzzRot13`](./cipher/rot13/rot13_test.go#L72): No description provided.
+
+---
+</details><details>
 	<summary> <strong> rsa </strong> </summary>	
 
 ---
@@ -791,6 +808,7 @@ Read our [Contribution Guidelines](CONTRIBUTING.md) before you contribute.
 
 1. [`Decrypt`](./cipher/rsa/rsa.go#L43):  Decrypt decrypts encrypted rune slice based on the RSA algorithm
 2. [`Encrypt`](./cipher/rsa/rsa.go#L28):  Encrypt encrypts based on the RSA algorithm - uses modular exponentitation in math directory
+3. [`FuzzRsa`](./cipher/rsa/rsa_test.go#L79): No description provided.
 
 ---
 </details><details>
